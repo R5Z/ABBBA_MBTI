@@ -7,7 +7,7 @@
 MBTI를 바탕으로 한 취향 매칭 서비스 프로젝트
 </br>
 🔗 배포 주소 </br>
-🔗 **[Explore Front-end Repository](https://github.com/Instagram-Clone-Coding/React_instagram_clone)**
+🔗 [Explore Front-end Repository](https://github.com/Instagram-Clone-Coding/React_instagram_clone)
 </br></br>
 
 </div>
