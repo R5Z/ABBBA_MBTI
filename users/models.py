@@ -35,13 +35,14 @@ class User(AbstractBaseUser):
     nickname = models.CharField(
         verbose_name='nickname',
         max_length=20,
-        unique=True,
+        unique=True,error_messages={'unique': "이미 존재하는 닉네임입니다."}
+
     )
     email = models.EmailField(max_length=255, default='', blank=True)
     profile_img = OptimizedImageField(
         upload_to="uploads/%Y/%m/%d",
         optimized_image_output_size=(300, 300),
-        optimized_image_resize_method="cover",  #  "crop", "cover", "contain", "width", "height", "thumbnail" or None
+        optimized_image_resize_method="cover", 
         null=True, blank=True
     )
     bio = models.CharField(max_length=255, default='', blank=True)
@@ -59,16 +60,11 @@ class User(AbstractBaseUser):
         return self.nickname
 
     def has_perm(self, perm, obj=None):
-        "Does the user have a specific permission?"
         return True
 
     def has_module_perms(self, app_label):
-        "Does the user have permissions to view the app `app_label`?"
-        # Simplest possible answer: Yes, always
         return True
 
     @property
     def is_staff(self):
-        "Is the user a member of staff?"
-        # Simplest possible answer: All admins are staff
         return self.is_admin
