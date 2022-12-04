@@ -6,8 +6,8 @@
 </br>
 MBTI를 바탕으로 한 취향 매칭 서비스 프로젝트
 </br>
-🔗 프론트 배포 주소 </br>
-🔗 https://github.com/kmg0485/ABBBA_MBTI_front.git
+🔗 프론트 레포 주소
+https://github.com/kmg0485/ABBBA_MBTI_front.git
 </br></br>
 
 🔗팀 노션
@@ -32,7 +32,12 @@ https://www.notion.so/2-730aeb20c24f414f889915f81393c62b
 </br></br></br>
 
 >### 와이어프레임
-<img width="883" alt="스크린샷 2022-11-08 11 59 05" src="https://user-images.githubusercontent.com/108252926/200464830-ad798404-04c7-4b4b-b1b2-c9abc5822baa.png">">
+<img width="883" alt="스크린샷 2022-11-08 11 59 05" src="https://user-images.githubusercontent.com/108252926/200464830-ad798404-04c7-4b4b-b1b2-c9abc5822baa.png">
+
+</br></br></br>
+
+>### ERD
+<img width="883" src="https://user-images.githubusercontent.com/18550082/205482639-4d45681c-9895-496f-bbdf-e599a8485326.png">
 
 </br></br></br>
 
@@ -40,10 +45,42 @@ https://www.notion.so/2-730aeb20c24f414f889915f81393c62b
 <img width="1222" alt="스크린샷 2022-11-08 14 09 01" src="https://user-images.githubusercontent.com/108252926/200480210-cd7d8c56-2891-4a21-9620-26f950866458.png">
 <img width="1222" alt="스크린샷 2022-11-08 14 09 11" src="https://user-images.githubusercontent.com/108252926/200480223-6887a34d-b70c-4ddc-b056-721bc0d18bcd.png">
 
+</br></br></br>
 
+>### Structure
+```
+┌─MBTI recommand
+├── MBTI                // project
+│   ├── urls.py         // base url
+│   ├── settings.py     // setting
+│   └── ...
+├── articles            // app
+│   ├── models.py       // DB Model - Article, Comment
+│   ├── views.py        // View Functions
+│   ├── serializers.py  // Serializers
+│   ├── urls.py         // article url
+│   └── ...
+├── movies              // app
+│   ├── models.py       // DB Model - Movie, Movielike
+│   ├── views.py        // View Functions
+│   ├── serializers.py  // Serializers
+│   ├── crawling.py     // crawling movie data
+│   ├── loaders_like_user.py
+│   ├── loaders_moive.py
+│   ├── machine.py      // AI cosine similarity
+│   ├── urls.py         // movie url
+│   └── ...
+├── user                // app
+│   ├── models.py       // DB Model - User
+│   ├── views.py        // View Functions
+│   ├── serializers.py  // Serializers
+│   ├── urls.py         // user url
+│   └── ...
+├── **manage.py**           // 메인
+└── requirements.txt
+```
 
->### ERD
-<img width="650" alt="스크린샷 2022-11-08 11 59 20" src="https://user-images.githubusercontent.com/108252926/200465246-7da6f2d6-bc9c-4c21-8604-9d37da553f69.png">
+</br></br></br>
 
 >### 일정표
 <img width="393" alt="스크린샷 2022-11-08 11 59 47" src="https://user-images.githubusercontent.com/108252926/200465161-35293a8e-562d-48ef-968a-70294db1141b.png">
@@ -52,6 +89,7 @@ https://www.notion.so/2-730aeb20c24f414f889915f81393c62b
 </br></br></br>
 
 >### 프로젝트 주요 기능
+</br>
 
 #### 필터링을 이용한 추천 시스템
 
